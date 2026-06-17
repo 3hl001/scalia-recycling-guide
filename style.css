@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: #d7e4e6;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+.container {
+
+    max-width: 430px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.guide-image {
+
+    width: 100%;
+
+    display: block;
+
+    animation:
+        floatPoster 8s ease-in-out infinite;
+}
+
+@keyframes floatPoster {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fade-in {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.fade-in.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.floating-fish {
+
+    position: fixed;
+
+    top: 20%;
+
+    right: 10%;
+
+    font-size: 24px;
+
+    opacity: .25;
+
+    pointer-events: none;
+
+    animation:
+        swim 12s linear infinite;
+}
+
+.fish-2 {
+
+    top: 70%;
+
+    animation-delay: 4s;
+}
+
+@keyframes swim {
+
+    0% {
+
+        transform:
+            translateX(120px)
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateX(-120px)
+            translateY(-15px);
+    }
+
+    100% {
+
+        transform:
+            translateX(120px)
+            translateY(0);
+    }
+}
+
+.scroll-top {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    color: #4aaeb3;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+
+    opacity: 0;
+
+    transition: .4s;
+
+    animation:
+        pulse 2.5s infinite;
+}
+
+.scroll-top.show {
+
+    opacity: 1;
+}
+
+@keyframes pulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(74,174,179,.4);
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 20px rgba(74,174,179,0);
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(74,174,179,0);
+    }
+}
